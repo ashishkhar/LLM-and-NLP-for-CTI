@@ -1,0 +1,2 @@
+make detailed stix2.1 json bundle with all the relationship types between objects. Make it very detailed, output should only be json. Include all the incidents.
+ 

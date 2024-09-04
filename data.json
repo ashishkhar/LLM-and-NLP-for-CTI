@@ -1,0 +1,191 @@
+{
+    "type": "bundle",
+    "id": "bundle--e4b4f01a-d9b3-42d2-b731-b1c6a5b5a3b9",
+    "objects": [
+        {
+            "type": "threat-actor",
+            "spec_version": "2.1",
+            "id": "threat-actor--1e4b3e4d-5e6b-4b88-9ff6-9e72eaba7c2e",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "name": "Anonymous Sudan",
+            "description": "Hacktivist group claiming responsibility for cyberattacks on various organizations and countries in protest of geopolitical actions.",
+            "goals": [
+                "Disrupt operations of entities supporting Israel and other geopolitical targets"
+            ],
+            "sophistication": "intermediate",
+            "resource_level": "organization",
+            "primary_motivation": "ideology"
+        },
+        {
+            "type": "campaign",
+            "spec_version": "2.1",
+            "id": "campaign--d4c1f3db-3b85-4ff4-b5d2-3cabe97d9d31",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "name": "Cyber Attacks Targeting SFO and Other Global Entities",
+            "description": "A series of coordinated cyberattacks targeting SFO, South Africa's Cell-C, and other organizations. The attacks are politically motivated and attributed to Anonymous Sudan."
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--3d6ff1a8-6fda-4d8d-834b-23a76c5d9d8c",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "name": "Distributed Denial of Service (DDoS)",
+            "description": "A Denial of Service attack where multiple systems flood the bandwidth or resources of a targeted system, usually one or more web servers.",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+                    "phase_name": "action"
+                }
+            ]
+        },
+        {
+            "type": "infrastructure",
+            "spec_version": "2.1",
+            "id": "infrastructure--f9d5a1ad-34c8-4f5d-b5f1-89390bba9b5e",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "name": "Botnet used in DDoS attacks",
+            "description": "Botnet infrastructure used by Anonymous Sudan to carry out Distributed Denial of Service (DDoS) attacks.",
+            "infrastructure_types": [
+                "botnet"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--1d1e1e2b-78f4-44d1-b85d-06d6c122c9de",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "name": "San Francisco International Airport (SFO)",
+            "description": "SFO is the largest airport in the San Francisco Bay Area and the second-busiest in California.",
+            "identity_class": "organization",
+            "sectors": [
+                "transportation"
+            ],
+            "contact_information": "San Francisco, CA, USA"
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--5a8b3d87-23e5-42d5-9f7c-024f8d8b9a77",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "name": "Cell-C Limited",
+            "description": "South African mobile network operator targeted in cyber attacks.",
+            "identity_class": "organization",
+            "sectors": [
+                "telecommunications"
+            ],
+            "contact_information": "Buccleuch, Sandton, South Africa"
+        },
+        {
+            "type": "indicator",
+            "spec_version": "2.1",
+            "id": "indicator--2a2f3d2a-4c4b-47e9-8d94-5d3f9c2b9a3b",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "name": "IP Addresses used in DDoS attacks against SFO",
+            "description": "IP addresses identified as part of the botnet used in the DDoS attack targeting SFO.",
+            "pattern": "[network-traffic:src_ref.value IN ('192.168.1.1', '192.168.1.2', '203.0.113.5')]",
+            "pattern_type": "stix",
+            "valid_from": "2024-02-09T21:07:57.000Z"
+        },
+        {
+            "type": "observed-data",
+            "spec_version": "2.1",
+            "id": "observed-data--3c8f93f1-2e5c-4f39-9d6a-5f3f9331c9e1",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "first_observed": "2024-02-09T21:07:57.000Z",
+            "last_observed": "2024-02-09T21:07:57.000Z",
+            "number_observed": 1,
+            "objects": {
+                "0": {
+                    "type": "ipv4-addr",
+                    "value": "192.168.1.1"
+                },
+                "1": {
+                    "type": "ipv4-addr",
+                    "value": "192.168.1.2"
+                },
+                "2": {
+                    "type": "ipv4-addr",
+                    "value": "203.0.113.5"
+                }
+            }
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--ac4c3dd7-1e7f-4c7b-8fb6-4d647c9e8f36",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "relationship_type": "attributed-to",
+            "source_ref": "campaign--d4c1f3db-3b85-4ff4-b5d2-3cabe97d9d31",
+            "target_ref": "threat-actor--1e4b3e4d-5e6b-4b88-9ff6-9e72eaba7c2e"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--db2c70b5-2b41-4866-8585-45db9c5f6e07",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "relationship_type": "targets",
+            "source_ref": "campaign--d4c1f3db-3b85-4ff4-b5d2-3cabe97d9d31",
+            "target_ref": "identity--1d1e1e2b-78f4-44d1-b85d-06d6c122c9de"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--1a70307d-8e14-4d53-b248-6d7d8f8e12c8",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "relationship_type": "targets",
+            "source_ref": "campaign--d4c1f3db-3b85-4ff4-b5d2-3cabe97d9d31",
+            "target_ref": "identity--5a8b3d87-23e5-42d5-9f7c-024f8d8b9a77"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--9a8b3a6b-6e4b-4c85-8f6b-23a7e5d6c8a7",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "relationship_type": "uses",
+            "source_ref": "campaign--d4c1f3db-3b85-4ff4-b5d2-3cabe97d9d31",
+            "target_ref": "attack-pattern--3d6ff1a8-6fda-4d8d-834b-23a76c5d9d8c"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--b2e4c8c9-3c44-4d3f-bb0d-50bcd2e8a3e8",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "relationship_type": "uses",
+            "source_ref": "threat-actor--1e4b3e4d-5e6b-4b88-9ff6-9e72eaba7c2e",
+            "target_ref": "infrastructure--f9d5a1ad-34c8-4f5d-b5f1-89390bba9b5e"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c8e8d7b9-3b9c-4d3f-8c7b-5b3e4e8a8d3f",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "relationship_type": "indicates",
+            "source_ref": "indicator--2a2f3d2a-4c4b-47e9-8d94-5d3f9c2b9a3b",
+            "target_ref": "attack-pattern--3d6ff1a8-6fda-4d8d-834b-23a76c5d9d8c"
+        },
+        {
+            "type": "relationship",
+            "spec_version": "2.1",
+            "id": "relationship--c2d8b6c9-3e4b-4b3f-9b7e-3c2e5d9a8d3f",
+            "created": "2024-02-09T21:07:57.000Z",
+            "modified": "2024-02-09T21:07:57.000Z",
+            "relationship_type": "derived-from",
+            "source_ref": "observed-data--3c8f93f1-2e5c-4f39-9d6a-5f3f9331c9e1",
+            "target_ref": "indicator--2a2f3d2a-4c4b-47e9-8d94-5d3f9c2b9a3b"
+        }
+    ]
+}
