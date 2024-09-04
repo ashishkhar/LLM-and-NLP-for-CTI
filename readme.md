@@ -1,7 +1,3 @@
-To create a `README.md` file for your project based on the content of your uploaded HTML file, here's a draft that includes the key details and functionalities from the project:
-
----
-
 # STIX Viewer
 
 This repository hosts the **STIX Viewer**, a web application designed to visualize and interact with STIX data in a structured and user-friendly manner. The viewer provides multiple functionalities, including extracting indicators, managing STIX data, running commands, and toggling between different forms of data input and visualization.
@@ -61,14 +57,7 @@ To set up the project locally, follow these steps:
 2. Open `index.html` in your browser to run the application locally.
 3. Ensure that your server has the required backend endpoints (`submit.php`, `merge.php`, etc.) to handle form submissions and data processing.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Contributing
 
 We welcome contributions! If you have suggestions for improvements or new features, feel free to open a pull request or file an issue.
-
----
-
-Feel free to modify this draft based on additional features or sections that your project may need.
